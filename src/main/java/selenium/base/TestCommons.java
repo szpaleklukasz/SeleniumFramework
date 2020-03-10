@@ -6,19 +6,27 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class TestCommons {
 
-    public TestCommons(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
+	private WebDriver driver;
+	private final String url = "http://example.com";
 
-    protected void sendKeysToElement(WebElement element, String text) {
-        element.sendKeys(text);
-    }
+	public TestCommons(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+		this.driver = driver;
+	}
+	
+	protected void goTo(String path) {
+		driver.get(url + path);
+	}
 
-    protected void clickElement(WebElement element) {
-        element.click();
-    }
+	protected void sendKeysToElement(WebElement element, String text) {
+		element.sendKeys(text);
+	}
 
-    protected String getElementAttribute(WebElement element, String attributeName) {
-        return element.getAttribute(attributeName);
-    }
+	protected void clickElement(WebElement element) {
+		element.click();
+	}
+
+	protected String getElementAttribute(WebElement element, String attributeName) {
+		return element.getAttribute(attributeName);
+	}
 }

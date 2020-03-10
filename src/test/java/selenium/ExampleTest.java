@@ -9,19 +9,21 @@ import selenium.pages.ExamplePage;
 
 public class ExampleTest extends TestBase {
 
-    @BeforeTest
-    public void before(){
-        System.out.println("Test is about to start");
-    }
+	@BeforeTest
+	public void before() {
+		System.out.println("Test is about to start");
+	}
 
-    @AfterTest
-    public void after(){
-        System.out.println("Test has been completed");
-    }
+	@AfterTest
+	public void after() {
+		System.out.println("Test has been completed");
+	}
 
-    @Test
-    public void testMethod(){
-        ExamplePage examplePage = new ExamplePage(driver);
-        Assert.assertEquals(examplePage.getHeaderText(), "Example Domain");
-    }
+	@Test
+	public void testMethod() {
+		ExamplePage examplePage = new ExamplePage(driver);
+		examplePage.goTo();
+
+		Assert.assertEquals(examplePage.getHeaderText(), "Example Domain");
+	}
 }
