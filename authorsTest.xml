@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Authors test suite">
+    <test name="/authors Test">
+        <classes>
+            <class name="selenium.AuthorsTest"></class>
+        </classes>
+    </test>
+    <test name="'/authors/id Wrong id Test">
+        <classes>
+            <class name="selenium.AuthorsIdTest"></class>
+        </classes>
+    </test>
+    <test name="'/authors/id every author Test">
+        <classes>
+            <class name="selenium.SpecificAuthorPageTest"></class>
+        </classes>
+    </test>
+</suite>
