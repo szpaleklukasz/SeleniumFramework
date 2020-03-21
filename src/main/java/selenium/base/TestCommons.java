@@ -4,10 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+
 public abstract class TestCommons {
 
-	private WebDriver driver;
-	private final String url = "https://patronage20-js-master.herokuapp.com/";
+	protected WebDriver driver;
+	private final String url = "https://patronage20-js-master.herokuapp.com";
 
 	public TestCommons(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -28,5 +33,16 @@ public abstract class TestCommons {
 
 	protected String getElementAttribute(WebElement element, String attributeName) {
 		return element.getAttribute(attributeName);
+	}
+
+	protected Boolean isImageValid(WebElement imageElement) {
+		String Source = imageElement.getAttribute("src");
+
+		try {
+			BufferedImage img = ImageIO.read(new URL(Source));
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
 	}
 }

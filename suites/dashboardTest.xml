@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Authors test suite">
-    <test name="Authors Test">
+<suite name="Dashboard test suite">
+    <test name="Number of sections test">
         <classes>
-            <class name="selenium.AuthorsTest"></class>
+            <class name="selenium.DashboardTest"></class>
         </classes>
     </test>
 </suite>
